@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./src/css/fonts.css">
+    <link rel="stylesheet" href="./src/css/settings.css">
+    <link rel="stylesheet" href="./src/css/global.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/mqueries.css">
+    <script src="./src/js/templates.js"></script>
+    <script src="./src/js/settings.js"></script>
+    <title>Pokedex</title>
+</head>
+
+<body onload="loadPokemons()">
+    <div id="top"></div>
+    <div class="glossyWindow d-none" onclick="closeDetails()"></div>
+    <header class="flex-row">
+        <div class="loader"></div>
+        <div class="search-input flex-row">
+            <i class='bx bx-search'></i>
+            <input id="search" type="text" placeholder="Search Pokemon" onkeyup="searchPokemon()">
+        </div>
+        <a href="#top">
+            <h1>Pokedex</h1>
+        </a>
+    </header>
+    <section id="content" class="flex-wrap">
+        <div id="pokemon-info-card" class="card box-shadow flex-column d-none">
+            <div class="card-header flex-row">
+                <i id="arrow-left" class='bx bxs-left-arrow arrow curser' onclick="clickThroughPokemonList(-1)"></i>
+                <h2 class="pokemon-name"></h2>
+                <span class="pokemon-id"></span>
+                <i id="arrow-right" class='bx bxs-right-arrow arrow curser' onclick="clickThroughPokemonList(1)"></i>
+            </div>
+            <article class="card-cover flex-row">
+                <div id="types" class="types flex-column"></div>
+                <img class="pokemon-img" src="">
+            </article>
+            <article id="pokemon-details" class="pokemon-details flex-column d-none">
+                <nav class="flex-row">
+                    <a class="about active curser" onclick="switchToDetail('.about', '.about-container')">About</a>
+                    <a class="stats curser" onclick="switchToDetail('.stats', '.stats-container')">Base Stats</a>
+                    <a class="evolution curser"
+                        onclick="switchToDetail('.evolution', '.evolution-container')">Evolution</a>
+                    <a class="moves curser" onclick="switchToDetail('.moves', '.moves-container')">Moves</a>
+                </nav>
+                <div class="details-container">
+                    <div id="about-container" class="about-container container flex-row"></div>
+                    <div id="stats-container" class="stats-container container flex-column d-none"></div>
+                    <div id="evolution-container" class="evolution-container container flex-row d-none"></div>
+                    <div id="moves-container" class="moves-container container flex-row d-none">
+                        <div id="moves-list" class="flex-wrap"></div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>
