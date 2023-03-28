@@ -30,7 +30,7 @@
         </a>
     </header>
     <section id="content" class="flex-wrap">
-        <div id="pokemon-info-card" class="card box-shadow flex-column d-none">
+        <div id="card" class="card box-shadow flex-column d-none">
             <div class="card-header flex-row">
                 <i id="arrow-left" class='bx bxs-left-arrow arrow curser' onclick="clickThroughPokemonList(-1)"></i>
                 <h2 class="pokemon-name"></h2>
@@ -41,7 +41,7 @@
                 <div id="types" class="types flex-column"></div>
                 <img class="pokemon-img" src="">
             </article>
-            <article id="pokemon-details" class="pokemon-details flex-column d-none">
+            <article id="pokemon-details" class="pokemon-details flex-column">
                 <nav class="flex-row">
                     <a class="about active curser" onclick="switchToDetail('.about', '.about-container')">About</a>
                     <a class="stats curser" onclick="switchToDetail('.stats', '.stats-container')">Base Stats</a>

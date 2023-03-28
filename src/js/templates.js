@@ -1,23 +1,23 @@
 function addTemplatePokemonCard(x) {
-    return `<div id="card-${x}" class="card cards box-shadow curser flex-column" 
-    onclick="seeDetails(${x})" onmouseover="changeToShiny('pokemon-img-${x}', ${x})" 
-    onmouseout="changeToDefault('pokemon-img-${x}', ${x})">
+    return `<div id="card${x}" class="card cards box-shadow curser flex-column" 
+    onclick="seeDetails(${x})" onmouseover="changeToShinyImg('pokemon-img-${x}', ${x})" 
+    onmouseout="changeToDefaultImg('pokemon-img-${x}', ${x})">
     <div class="card-header flex-row">
         <h2 class="pokemon-name"></h2>
         <span class="pokemon-id"></span>
     </div>
     <article class="card-cover flex-row">
-        <div id="types-${x}" class="types flex-column"></div>
+        <div id="types${x}" class="types flex-column"></div>
         <img id="pokemon-img-${x}" class="pokemon-img" src="">
     </article></div>`;
 }
 
 function addType(x, i) {
-    return `<span id="type-${x}${i}"></span>`;
+    return `<span id="type${x}${i}"></span>`;
 }
 
 function addInfoType(i) {
-    return `<span id="type-${i}"></span>`;
+    return `<span id="type${i}"></span>`;
 }
 
 function addTemplateAboutContainer() {

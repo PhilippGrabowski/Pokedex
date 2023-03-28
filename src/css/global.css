@@ -15,7 +15,7 @@ html {
     font-size: 62.5%;
 }
     
-body {
+html, body {
     font-family: 'Ranade', sans-serif;
     scroll-behavior: smooth;
 }
@@ -49,4 +49,52 @@ body {
   
 .d-none {
     display: none;
+}
+
+.grass {
+    background-color: var(--green-color) !important;
+}
+
+.fire {
+    background-color: var(--red-color) !important;
+}
+
+.ice,
+.water {
+    background-color: var(--blue-color) !important;
+}
+
+.bug {
+    background-color: var(--lightgreen-color) !important;
+}
+
+.fairy,
+.normal,
+.fighting {
+    background-color: var(--grey-color) !important;
+}
+
+.poison {
+    background-color: var(--purple-color) !important;
+}
+
+.electric {
+    background-color: var(--yellow-color) !important;
+}
+
+.ground {
+    background-color: var(--brown-color) !important;
+}
+
+.ghost,
+.psychic {
+    background-color: var(--darkpurple-color) !important;
+}
+
+.rock {
+    background-color: var(--darkgrey-color) !important;
+}
+
+.dragon {
+    background-color: var(--orange-color) !important;
 }
