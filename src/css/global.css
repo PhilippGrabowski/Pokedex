@@ -55,46 +55,142 @@ html, body {
     background-color: var(--green-color) !important;
 }
 
+.cards.grass .types span:hover {
+    background-color: var(--hover-grass) !important;
+}
+
 .fire {
     background-color: var(--red-color) !important;
 }
 
-.ice,
+.cards.fire .types span:hover {
+    background-color: var(--hover-fire) !important;
+}
+
+.ice {
+    background-color: var(--lightblue-color) !important;
+}
+
+.cards.ice .types span:hover {
+    background-color: var(--hover-ice) !important;
+}
+
 .water {
     background-color: var(--blue-color) !important;
+}
+
+.cards.water .types span:hover {
+    background-color: var(--hover-water) !important;
 }
 
 .bug {
     background-color: var(--lightgreen-color) !important;
 }
 
-.fairy,
-.normal,
+.cards.bug .types span:hover {
+    background-color: var(--hover-bug) !important;
+}
+
 .fighting {
+    background-color: var(--darkbrown-color) !important
+}
+
+.cards.fighting .types span:hover {
+    background-color: var(--hover-fighting) !important;
+}
+
+.fairy {
+    background-color: var(--lightyellow-color) !important;
+}
+
+.cards.fairy .types span:hover {
+    background-color: var(--hover-fairy) !important;
+}
+
+.normal {
     background-color: var(--grey-color) !important;
+}
+
+.cards.normal .types span:hover {
+    background-color: var(--hover-normal) !important;
 }
 
 .poison {
     background-color: var(--purple-color) !important;
 }
 
+.cards.poison .types span:hover {
+    background-color: var(--hover-poison) !important;
+}
+
 .electric {
     background-color: var(--yellow-color) !important;
+}
+
+.cards.electric .types span:hover {
+    background-color: var(--hover-electric) !important;
 }
 
 .ground {
     background-color: var(--brown-color) !important;
 }
 
-.ghost,
+.cards.ground .types span:hover {
+    background-color: var(--hover-ground) !important;
+}
+
+.ghost {
+    background-color: var(--darkerpurple-color) !important;
+}
+
+.cards.ghost .types span:hover {
+    background-color: var(--hover-ghost) !important;
+}
+
 .psychic {
     background-color: var(--darkpurple-color) !important;
+}
+
+.cards.psychic .types span:hover {
+    background-color: var(--hover-psychic) !important;
 }
 
 .rock {
     background-color: var(--darkgrey-color) !important;
 }
 
+.cards.rock .types span:hover {
+    background-color: var(--hover-rock) !important;
+}
+
 .dragon {
     background-color: var(--orange-color) !important;
+}
+
+.cards.dragon .types span:hover {
+    background-color: var(--hover-dragon) !important;
+}
+
+.flying {
+    background-color: var(--pink-color) !important;
+}
+
+.cards.flying .types span:hover {
+    background-color: var(--hover-flying) !important;
+}
+
+.steel {
+    background-color: var(--steel-color) !important;
+}
+
+.cards.steel .types span:hover {
+    background-color: var(--hover-steel) !important;
+}
+
+.dark {
+    background-color: var(--unlicht-color) !important;
+}
+
+.cards.dark .types span:hover {
+    background-color: var(--hover-dark) !important;
 }

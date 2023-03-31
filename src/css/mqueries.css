@@ -1,0 +1,94 @@
+@media (max-width: 700px) {
+    header h1 {
+        font-size: var(--font-size-24);
+    }
+    #load-input-container,
+    #search-input-container {
+        scale: 0.9;
+    }
+}
+
+@media (max-width: 560px) {
+    .search-input {
+        scale: 0.8;
+    }
+    .response-search-input,
+    .responsive-load-input {
+        display: flex;
+    }
+    #load-input-container,
+    #search-input-container {
+        display: none !important;
+    }
+    #response-search {
+        gap: 5px;
+    }
+    .response-search-input i {
+        font-size: var(--font-size-18);
+    }
+    #search-response {
+        width: 100%;
+        scale: 0.8;;
+    }
+    #favorites {
+        font-size: 3.4rem;
+    }
+}
+
+@media (max-width: 500px) {
+    #card {
+        scale: 1.2;
+    }
+    header {
+        padding: 20px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    #card {
+        width: 70vw;
+    }
+    .card {
+        scale: 0.9;
+    }
+    .active {
+        padding-bottom: 1px;
+        border-bottom: 1px solid #3131e5;
+    }
+    :root {
+        --font-size-16: 14px;
+        --font-size-12: 10px;
+    }
+    .types span {
+        padding: 3px 8px;
+    }
+    .stat-name {
+        min-width: 10rem;
+    }
+    #search {
+        width: 100px;
+    }
+    .icon {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    .parameters > span {
+        min-width: 7rem;
+    }
+    .card-cover i {
+        bottom: 0;
+        left: calc(50% - 1.5rem);
+        font-size: 3rem;
+    }
+    .response-search-input {
+        gap: 0;
+        width: 120px;
+    }
+    form {
+        width: 100px;
+    }
+    #load-response {
+        width: 50px;
+        padding-left: 5px;
+    }
+}

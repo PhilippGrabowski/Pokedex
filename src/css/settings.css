@@ -8,13 +8,38 @@
   --red-color: #fa6555;
   --green-color: #2cdab1;
   --lightgreen-color: #a0da2c;
+  --lightyellow-color: #dfdfbb;
   --blue-color: #58abf6;
+  --lightblue-color: #91c6f4;
   --yellow-color: #ffed4b;
   --orange-color: #ffb74b;
   --purple-color: #9f5bba;
   --darkpurple-color: #775bba;
+  --darkerpurple-color: #22153f;
   --brown-color: #ca8179;
+  --darkbrown-color: #624b4a;
+  --pink-color: #EE90E6;
+  --steel-color: #5695A3;
+  --unlicht-color: #313133;
   --loader-color: rgba(31, 23, 23, 0.7);
+  --hover-grass: #c93052;
+  --hover-fire: #1297a7;
+  --hover-water: #a25913;
+  --hover-bug: #6230cd;
+  --hover-normal: #303128;
+  --hover-poison: #63a04a;
+  --hover-electric: #0f1fb0;
+  --hover-ground: #3d7e85;
+  --hover-psychic: #87a049;
+  --hover-rock: #56564c;
+  --hover-ice: #704215;
+  --hover-dragon: #0d4fb0;
+  --hover-fighting: #9aaeb1;
+  --hover-ghost: #d4dfbb;
+  --hover-fairy: #2a2b48;
+  --hover-flying: #1d7121;
+  --hover-steel: #a46d5f;
+  --hover-dark: #c6c6c5;
   
   /* Font-Size */
   --font-size-12: 12px;

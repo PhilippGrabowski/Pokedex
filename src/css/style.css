@@ -2,6 +2,7 @@ body {
     background-color: var(--white-color);
     overflow-x: hidden;
     position: relative;
+    display: grid;
 }
 
 header {
@@ -10,19 +11,62 @@ header {
     left: 0;
     width: 100%;
     background-color: var(--red-color);
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 10px;
+    padding: 20px 30px;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    z-index: 2;
+    z-index: 5;
 }
 
 header a {
     text-decoration: none;
 }
 
-.search-input {
+#response-search {
+    gap: 20px;
+    align-items: center;
+}
+
+#favorites {
+    font-size: 4rem;
+    color: rgb(220, 176, 0);
+    transition: all 0.5s ease-in-out;
+}
+
+#favorites:hover {
+    transform: rotate(360deg);
+    color: rgb(250, 233, 0);
+}
+
+.bx-x {
+    display: none;
+}
+
+#load-input-container,
+#search-input-container {
+    align-items: center;
+    gap: 20px;
+}
+
+#search-input-container .search-input {
+    width: 200px;
+}
+
+.input-option {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--white-color);
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+.response-search-input {
+    display: none;
+}
+
+.search-input,
+.response-search-input {
     background-color: var(--white-color);
     border-radius: 20px;
     align-items: center;
@@ -35,11 +79,35 @@ header a {
     font-weight: bold;
 }
 
-.search-input input {
+#load {
+    border-radius: 20px;
+    padding: 5px 0 5px 20px;
+    width: 10rem;
+}
+
+form button {
+    padding: 5px;
+}
+
+.load-input span {
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 10px;
+    color: var(--red-color);
+}
+
+#load,
+#search,
+#load-response,
+#search-response {
     border: none;
     outline: none;
     background-color: var(--white-color);
     font-size: var(--font-size-18);
+}
+
+#search {
+    width: 100%;
 }
 
 header h1 {
@@ -49,14 +117,29 @@ header h1 {
     padding: 0 10px;
 }
 
-header h1:hover {
-    background-color: rgba(188, 45, 38, 0.7);
+button:hover {
+    background-color: #cf3e34;
+}
+
+header h1:hover,
+#magnifier:hover,
+.input-option:hover {
+    background-color: #bc2d26b3;
+}
+
+.responsive-go {
+    align-items: center;
+    gap: 5px;
+}
+
+.responsive-load-input,
+.response-search-input {
+    display: none;
 }
 
 #content {
     width: 98.5vw;
-    min-height: 100vh;
-    padding: 20px 0;
+    padding: 40px 0;
     gap: 20px;
     justify-content: center;
     background-color: var(--white-color);
@@ -98,6 +181,15 @@ header h1:hover {
 .card-cover {
     align-items: flex-end;
     padding: 0 20px 20px 20px;
+    position: relative;
+}
+
+.card-cover i {
+    position: absolute;
+    bottom: -0.5rem;
+    left: calc(50% - 2rem);
+    font-size: 4rem;
+    color: rgb(220, 176, 0);
 }
 
 .pokemon-id,
@@ -112,15 +204,21 @@ header h1:hover {
 }
 
 .types {
-    gap: 10px;
+    gap: 20px;
 }
 
-.types span {
+.types a {
+    text-decoration: none;
+}
+
+.types span,
+.types a span {
     font-size: var(--font-size-12);
     width: fit-content;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(31, 23, 23, 0.3);
     padding: 5px 15px;
     border-radius: 10px;
+    color: var(--white-color);
 }
 
 .pokemon-img {
@@ -155,6 +253,7 @@ header h1:hover {
 .details-container {
     padding: 20px 10px;
     height: 100%;
+    position: relative;
 }
 
 .details-container i {
@@ -267,12 +366,17 @@ progress {
     height: 1rem;
 }
 
-#card {
+#pokemon-info-card {
+    width: 100vw;
+    height: 100vh;
     position: fixed;
     z-index: 2;
+}
+
+#card {
+    margin-bottom: 20vh;
     border-bottom-left-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
-    margin-top: 40px;
     transition: all .5s ease-in-out;
     scale: 1.5;
 }
@@ -302,30 +406,6 @@ progress {
     background: #888; ; 
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #fa6555; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #3131e5; ; 
-}
-
-.loader {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background-color: var(--loader-color);
-    border: 4px solid  rgba(188, 45, 38, 0.7);
-}
-
 .active {
     color: var(--black-color) !important;
     padding-bottom: 5px;
@@ -353,5 +433,74 @@ progress {
 }
 
 .arrow:hover {
-    color: #3131e5
+    color: #3131e5;
+}
+
+#icon-container {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    gap: 10px;
+}
+
+.icon {
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+    display: grid;
+    place-items: center;
+}
+
+.icon img {
+    height: 60%;
+    width: 60%;
+}
+
+.lightId {
+    color: rgba(240, 240, 245, 0.7);
+}
+
+.lightTyp {
+    color: var(--black-color) !important;
+    background-color: rgba(240, 240, 245, 0.7) !important;
+}
+
+.darkName {
+    color: rgba(31, 23, 23, 0.7);
+}
+
+.newPokemon {
+    text-align: center;
+    font-size: var(--font-size-12);
+}
+
+.noFavorites {
+    align-items: center;
+    margin: 40px 10px;
+    width: 100%;
+    gap: 20px;
+}
+
+.noFavorites h1 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.noFavorites img {
+    width: 40rem;
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color: var(--red-color);
+    color: var(--white-color);
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+#loadListBtn {
+    border-radius: 40px 40px 0 0;
 }

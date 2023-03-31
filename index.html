@@ -10,27 +10,58 @@
     <link rel="stylesheet" href="./src/css/settings.css">
     <link rel="stylesheet" href="./src/css/global.css">
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/pokeball.css">
     <link rel="stylesheet" href="./src/css/mqueries.css">
     <script src="./src/js/templates.js"></script>
     <script src="./src/js/settings.js"></script>
     <title>Pokedex</title>
 </head>
 
-<body onload="loadPokemons()">
+<body onload="loadData()">
     <div id="top"></div>
-    <div class="glossyWindow d-none" onclick="closeDetails()"></div>
+    <div class="glossyWindow d-none"></div>
     <header class="flex-row">
-        <div class="loader"></div>
-        <div class="search-input flex-row">
-            <i class='bx bx-search'></i>
-            <input id="search" type="text" placeholder="Search Pokemon" onkeyup="searchPokemon()">
+        <div id="response-search" class="flex-column">
+            <i id="favorites" class='bx bxs-star curser' onclick="renderFavorites()"></i>
+            <div class="response-search-input flex-row">
+                <i class='bx bx-search'></i>
+                <input id="search-response" type="text" placeholder="Name, ID, Typ" onkeyup="searchPokemon()">
+            </div>
         </div>
-        <a href="#top">
-            <h1>Pokedex</h1>
-        </a>
+        <div id="search-input-container" class="flex-row">
+            <span class="input-option curser"
+                onclick="changeInputOption('search-input-container', 'load-input-container')">Go to</span>
+            <div class="search-input flex-row">
+                <i class='bx bx-search'></i>
+                <input id="search" type="text" placeholder="Name, ID, Typ" onkeyup="searchPokemon()">
+            </div>
+        </div>
+        <div id="load-input-container" class="flex-row d-none">
+            <span class="input-option curser"
+                onclick="changeInputOption('load-input-container', 'search-input-container')">Search</span>
+            <div class="load-input search-input flex-row">
+                <form onsubmit="goToPokemon(); return false">
+                    <input id="load" type="number" min="1" max="1010" step="1" placeholder="ID" pattern="[0-9]">
+                    <button class="curser" onclick="goToPokemon()">Go</button>
+                </form>
+            </div>
+        </div>
+        <div class="responsive-go flex-column">
+            <a href="#top">
+                <h1>Pokedex</h1>
+            </a>
+            <div class="responsive-load-input search-input flex-row">
+                <form onsubmit="goToPokemon(); return false">
+                    <input id="load-response" type="number" min="1" max="1010" step="1" placeholder="ID"
+                        pattern="[0-9]">
+                    <button class="curser" onclick="goToPokemon()">Go</button>
+                </form>
+            </div>
+        </div>
     </header>
-    <section id="content" class="flex-wrap">
-        <div id="card" class="card box-shadow flex-column d-none">
+    <section id="content" class="flex-wrap"></section>
+    <section id="pokemon-info-card" class="grid d-none" onclick="closeDetails()">
+        <div id="card" class="card box-shadow flex-column" onclick="stopPropagation(event)">
             <div class="card-header flex-row">
                 <i id="arrow-left" class='bx bxs-left-arrow arrow curser' onclick="clickThroughPokemonList(-1)"></i>
                 <h2 class="pokemon-name"></h2>
@@ -39,12 +70,15 @@
             </div>
             <article class="card-cover flex-row">
                 <div id="types" class="types flex-column"></div>
-                <img class="pokemon-img" src="">
+                <img id="pokemon-img" class="pokemon-img" src="">
+                <i id="unlikeStar" class='bx bx-star curser' onclick="addToFavorites()"></i>
+                <i id="likeStar" class='bx bxs-star curser d-none' onclick="removeFromFavorites()"></i>
+                <div id="pokeball-container" class="d-none"></div>
             </article>
             <article id="pokemon-details" class="pokemon-details flex-column">
                 <nav class="flex-row">
                     <a class="about active curser" onclick="switchToDetail('.about', '.about-container')">About</a>
-                    <a class="stats curser" onclick="switchToDetail('.stats', '.stats-container')">Base Stats</a>
+                    <a class="stats curser" onclick="switchToDetail('.stats', '.stats-container')">Stats</a>
                     <a class="evolution curser"
                         onclick="switchToDetail('.evolution', '.evolution-container')">Evolution</a>
                     <a class="moves curser" onclick="switchToDetail('.moves', '.moves-container')">Moves</a>
@@ -60,6 +94,7 @@
             </article>
         </div>
     </section>
+    <button id="loadListBtn" class="box-shadow curser" onclick="renderMorePokemonCards()">Lade mehr Pokemon</button>
 
     <script src="./src/js/script.js"></script>
 </body>
