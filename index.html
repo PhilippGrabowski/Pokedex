@@ -22,32 +22,31 @@
     <div class="glossyWindow d-none"></div>
     <header class="flex-row">
         <div id="response-search" class="flex-column">
-            <i id="favorites" class='bx bxs-star curser' onclick="renderFavorites()"></i>
+            <i id="favorites" class='bx bxs-star curser' onclick="renderFavorites(); closeDetails()"></i>
             <div class="response-search-input flex-row">
                 <i class='bx bx-search'></i>
-                <input id="search-response" type="text" placeholder="Name, ID, Typ" onkeyup="searchPokemon()">
+                <input id="search-response" type="text" placeholder="Name, ID, Typ" onkeyup="searchPokemon()"
+                    onclick="closeDetails()">
             </div>
         </div>
         <div id="search-input-container" class="flex-row">
             <div class="flex-row flip">
-                <span class="input-option curser"
-                    onclick="changeInputOption('search-input-container', 'load-input-container')">Go to</span>
-                <img src="./src/img/flip.png">
+                <span class="input-option">Search</span>
             </div>
             <div class="search-input flex-row">
                 <i class='bx bx-search'></i>
-                <input id="search" type="text" placeholder="Name, ID, Typ" onkeyup="searchPokemon()">
+                <input id="search" type="text" placeholder="Name, ID, Typ" onkeyup="searchPokemon()"
+                    onclick="closeDetails()">
             </div>
         </div>
-        <div id="load-input-container" class="flex-row d-none">
+        <div id="load-input-container" class="flex-row">
             <div class="flex-row flip">
-                <span class="input-option curser"
-                    onclick="changeInputOption('load-input-container', 'search-input-container')">Search</span>
-                <img src="./src/img/flip.png">
+                <span class="input-option">Go to</span>
             </div>
             <div class="load-input search-input flex-row">
                 <form onclick="return false">
-                    <input id="load" type="number" min="1" max="1010" step="1" placeholder="ID" pattern="[0-9]">
+                    <input id="load" type="number" min="1" max="1010" step="1" placeholder="ID" pattern="[0-9]"
+                        onclick="closeDetails()">
                     <button class="curser" onclick="goToPokemon()">Go</button>
                 </form>
             </div>
@@ -57,10 +56,10 @@
                 <h1>Pokedex</h1>
             </a>
             <div class="responsive-load-input search-input flex-row">
-                <form onsubmit="goToPokemon(); return false">
+                <form onsubmit="return false">
                     <input id="load-response" type="number" min="1" max="1010" step="1" placeholder="ID"
                         pattern="[0-9]">
-                    <button class="curser" onclick="goToPokemon()">Go</button>
+                    <button class="curser" onclick="goToPokemon(); closeDetails()">Go</button>
                 </form>
             </div>
         </div>

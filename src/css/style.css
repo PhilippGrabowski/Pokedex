@@ -57,12 +57,6 @@ header a {
     font-size: 28px;
     font-weight: bold;
     color: var(--white-color);
-    border-radius: 20px;
-    padding: 0 10px;
-}
-
-.response-search-input {
-    display: none;
 }
 
 .search-input,
@@ -121,8 +115,7 @@ button:hover {
     background-color: #cf3e34;
 }
 
-header h1:hover,
-.flip:hover {
+header h1:hover {
     background-color: #bc2d26b3;
 }
 
@@ -503,19 +496,4 @@ button {
 
 #loadListBtn {
     border-radius: 40px 40px 0 0;
-}
-
-.flip {
-    align-items: center;
-    border-radius: 20px;
-    padding: 0 10px;
-}
-
-.flip img {
-    width: 25px;
-    display: none;
-}
-
-.flip:hover img {
-    display: unset;
 }

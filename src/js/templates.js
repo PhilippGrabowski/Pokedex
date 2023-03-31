@@ -82,7 +82,7 @@ function addMove(i) {
 
 function addNoFavoritesTemplate() { 
     return `<div class="noFavorites flex-column">
-    <h1>Du hast noch keine Favoriten ausgewählt!</h1>
+    <h1>Du hast bis jetzt noch keine Pokemon gefangen. Wähle jetzt dein Team!</h1>
     <img src="./src/img/enton.png">
 </div>`;
 }

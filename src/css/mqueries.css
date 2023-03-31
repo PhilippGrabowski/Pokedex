@@ -1,14 +1,7 @@
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     header h1 {
         font-size: var(--font-size-24);
     }
-    #load-input-container,
-    #search-input-container {
-        scale: 0.9;
-    }
-}
-
-@media (max-width: 620px) {
     .search-input {
         scale: 0.8;
     }
@@ -32,6 +25,22 @@
     }
     #favorites {
         font-size: 3.4rem;
+    }
+    #response-search {
+        flex-direction: row;
+        align-items: flex-end;
+        height: 100%;
+        margin-bottom: 10px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    #response-search {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
     }
 }
 
