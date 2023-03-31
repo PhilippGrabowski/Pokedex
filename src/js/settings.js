@@ -69,8 +69,12 @@ function renderPokemonCard(x) {
             break;
         }
     }
+    if (x == 1010) {
+        document.getElementById('loadListBtn').classList.add('d-none');
+    } else {
+        document.getElementById('loadListBtn').classList.remove('d-none');
+    }
     lastLoadedPokemon = x + 20;
-    document.getElementById('loadListBtn').classList.remove('d-none');
 }
 
 function renderMorePokemonCards() {
