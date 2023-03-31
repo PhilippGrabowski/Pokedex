@@ -161,6 +161,7 @@ header h1:hover,
     background-position-x: right;
     background-position-y: bottom;
     background-blend-mode: overlay;
+    height: 22rem;
 }
 
 .cards:hover {

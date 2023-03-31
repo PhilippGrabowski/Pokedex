@@ -94,5 +94,5 @@ function addPokeballTemplate() {
 }
 
 function addLoadAllPokemonButtonTemplate() {
-    return '<button class="box-shadow curser" onclick="renderPokemonCard(1)">Zurück zur Pokemonliste</button>'
+    return '<a href="#top"><button class="box-shadow curser" onclick="renderPokemonCard(1)">Zurück zur Pokemonliste</button></a>'
 }

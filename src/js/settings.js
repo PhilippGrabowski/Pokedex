@@ -30,10 +30,10 @@ function loadData() {
 
 async function loadAllPokemon() {
     pokemons = [];
-    for (let i = 1; i < 1010; i++) {
+    for (let i = 1; i < 1011; i++) {
         let pokemon = await loadPokemon(i);
         pokemons.push(pokemon);
-        if (i == 41) {
+        if (i == 21) {
             renderPokemonCard(1);
         }
     };
@@ -61,7 +61,7 @@ function renderPokemonCard(x) {
         let content = document.getElementById('content');
         content.innerHTML = '';
     }
-    for (let i = x; i < x+40; i++) {
+    for (let i = x; i < x+20; i++) {
         currentPokemon = pokemons[i-1];
         createPokemonCard(i);
         fillPokemonCard(i);
@@ -69,12 +69,12 @@ function renderPokemonCard(x) {
             break;
         }
     }
-    lastLoadedPokemon = x + 40;
+    lastLoadedPokemon = x + 20;
     document.getElementById('loadListBtn').classList.remove('d-none');
 }
 
 function renderMorePokemonCards() {
-    if (lastLoadedPokemon < 1011) {
+    if (lastLoadedPokemon < 1031) {
         renderPokemonCard(lastLoadedPokemon);
     }
 }
@@ -495,7 +495,7 @@ function loadSearchedPokemon(content, search) {
     document.getElementById('loadListBtn').classList.add('d-none');
 }
 
-async function renderSearchedPokemon(search) {
+function renderSearchedPokemon(search) {
     for (let i = 0; i < pokemons.length; i++) {
         let name = pokemons[i]['name'];
         let id = pokemons[i]['id'];
@@ -605,6 +605,7 @@ function changeInputOption(element1, element2) {
 
 function goToPokemon() {
     let x = document.getElementById('load').value;
+    x = +x;
     let content = document.getElementById('content');
     content.innerHTML = '';
     renderPokemonCard(x);

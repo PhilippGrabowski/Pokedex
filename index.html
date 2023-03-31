@@ -40,7 +40,7 @@
             <span class="input-option curser"
                 onclick="changeInputOption('load-input-container', 'search-input-container')">Search</span>
             <div class="load-input search-input flex-row">
-                <form onsubmit="goToPokemon(); return false">
+                <form onclick="return false">
                     <input id="load" type="number" min="1" max="1010" step="1" placeholder="ID" pattern="[0-9]">
                     <button class="curser" onclick="goToPokemon()">Go</button>
                 </form>
