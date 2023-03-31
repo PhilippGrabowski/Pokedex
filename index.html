@@ -29,16 +29,22 @@
             </div>
         </div>
         <div id="search-input-container" class="flex-row">
-            <span class="input-option curser"
-                onclick="changeInputOption('search-input-container', 'load-input-container')">Go to</span>
+            <div class="flex-row flip">
+                <span class="input-option curser"
+                    onclick="changeInputOption('search-input-container', 'load-input-container')">Go to</span>
+                <img src="./src/img/flip.png">
+            </div>
             <div class="search-input flex-row">
                 <i class='bx bx-search'></i>
                 <input id="search" type="text" placeholder="Name, ID, Typ" onkeyup="searchPokemon()">
             </div>
         </div>
         <div id="load-input-container" class="flex-row d-none">
-            <span class="input-option curser"
-                onclick="changeInputOption('load-input-container', 'search-input-container')">Search</span>
+            <div class="flex-row flip">
+                <span class="input-option curser"
+                    onclick="changeInputOption('load-input-container', 'search-input-container')">Search</span>
+                <img src="./src/img/flip.png">
+            </div>
             <div class="load-input search-input flex-row">
                 <form onclick="return false">
                     <input id="load" type="number" min="1" max="1010" step="1" placeholder="ID" pattern="[0-9]">

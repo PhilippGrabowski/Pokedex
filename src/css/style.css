@@ -122,8 +122,7 @@ button:hover {
 }
 
 header h1:hover,
-#magnifier:hover,
-.input-option:hover {
+.flip:hover {
     background-color: #bc2d26b3;
 }
 
@@ -504,4 +503,19 @@ button {
 
 #loadListBtn {
     border-radius: 40px 40px 0 0;
+}
+
+.flip {
+    align-items: center;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+.flip img {
+    width: 25px;
+    display: none;
+}
+
+.flip:hover img {
+    display: unset;
 }
