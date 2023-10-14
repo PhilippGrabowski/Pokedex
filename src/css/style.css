@@ -557,3 +557,17 @@ button {
         transform: rotate(60deg);
     }
 }
+
+#loading_container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#loading_container img {
+    mix-blend-mode: color-burn;
+}
+
+#loading_container span {
+    font-size: 24px;
+}
