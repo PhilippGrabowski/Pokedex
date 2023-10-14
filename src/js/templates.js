@@ -89,10 +89,10 @@ function addNoFavoritesTemplate() {
 
 function addPokeballTemplate() {
     return `<div class="pokeball">
-      <div class="pokeball__button"></div>
+    <div class="pokeball__button"></div>
     </div>`;
 }
 
 function addLoadAllPokemonButtonTemplate() {
-    return '<a href="#top"><button class="box-shadow curser" onclick="renderPokemonCard(1)">Zurück zur Pokemonliste</button></a>'
+    return '<a id="back" href="#top"><button class="box-shadow curser" onclick="renderPokemonCards(1)">Zurück zur Pokemonliste</button></a>'
 }

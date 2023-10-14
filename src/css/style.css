@@ -497,3 +497,63 @@ button {
 #loadListBtn {
     border-radius: 40px 40px 0 0;
 }
+
+#load::-webkit-outer-spin-button,
+#load::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#back {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+#back button {
+    width: fit-content;
+    height: fit-content;
+}
+
+#rotate-device {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(8px);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 24px;
+    gap: 20px;
+}
+
+#rotate-device i {
+    font-size: 84px;
+    color: white;
+    animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(60deg);
+    }
+
+    50% {
+        transform: rotate(-60deg);
+    }
+
+    100% {
+        transform: rotate(60deg);
+    }
+}

@@ -14,10 +14,13 @@
     <link rel="stylesheet" href="./src/css/mqueries.css">
     <script src="./src/js/templates.js"></script>
     <script src="./src/js/settings.js"></script>
+    <script src="./src/js/script.js"></script>
+    <script src="./src/js/card-details.js"></script>
+    <script src="./src/js/filter.js"></script>
     <title>Pokedex</title>
 </head>
 
-<body onload="loadData()">
+<body onload="loadData(); loadFavorites()">
     <div id="top"></div>
     <div class="glossyWindow d-none"></div>
     <header class="flex-row">
@@ -100,8 +103,10 @@
         </div>
     </section>
     <button id="loadListBtn" class="box-shadow curser" onclick="renderMorePokemonCards()">Lade mehr Pokemon</button>
-
-    <script src="./src/js/script.js"></script>
+    <div id="rotate-device">
+        <i class='bx bx-mobile-landscape'></i>
+        <span>Please Rotate Device to Portrait Mode</span>
+    </div>
 </body>
 
 </html>
